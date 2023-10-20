@@ -1,0 +1,18 @@
+{
+    "name": "ID Lace",
+    "price": "50.00",
+    "quantity": "120",
+    "description": "Durable ID lace with school logo and card holder."
+},
+{
+    "name": "Class Picture",
+    "price": "20.00",
+    "quantity": "42",
+    "description": "CSAA / SY 2019-2020"
+},
+{
+    "name": "Uniform",
+    "price": "450.50",
+    "quantity": "1000",
+    "description": "Male Large"
+}
