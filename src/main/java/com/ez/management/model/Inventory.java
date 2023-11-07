@@ -21,6 +21,14 @@ public class Inventory implements Serializable {
 
     public Inventory() {}
 
+    public Inventory(Long id, String name, BigDecimal price, Integer quantity, String description) {
+        this.id = id;
+        this.name = name;
+        this.price = price;
+        this.quantity = quantity;
+        this.description = description;
+    }
+
     public Inventory(String name, BigDecimal price, Integer quantity, String description) {
         this.name = name;
         this.price = price;
