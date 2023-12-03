@@ -21,10 +21,14 @@ public class ManagementApplication {
 	public CorsFilter corsFilter() {
 		CorsConfiguration corsConfiguration = new CorsConfiguration();
 		corsConfiguration.setAllowCredentials(true);
-		corsConfiguration.setAllowedOrigins(Arrays.asList("http://localhost:4200"));
+		corsConfiguration.setAllowedOrigins(Arrays.asList(
+				"http://localhost:4200",
+				"https://helped-basilisk-renewed.ngrok-free.app"
+				));
 		corsConfiguration.setAllowedHeaders(Arrays.asList(
 				"Origin", "Content-Type", "Accept", "Authorization", "Origin, Accept", "X-Requested-With",
-				"Access-Control-Allow-Origin", "Access-Control-Request-Method", "Access-Control-Request-Headers"
+				"Access-Control-Allow-Origin", "Access-Control-Request-Method", "Access-Control-Request-Headers",
+				"ngrok-skip-browser-warning"
 		));
 		corsConfiguration.setExposedHeaders(Arrays.asList(
 				"Origin", "Content-Type", "Accept", "Authorization",

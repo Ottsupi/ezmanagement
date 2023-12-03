@@ -19,7 +19,7 @@ import java.util.Date;
 import java.util.List;
 
 @RestController
-@RequestMapping("/transaction")
+@RequestMapping("api/transaction")
 public class TransactionResource {
     private final TransactionService transactionService;
 
