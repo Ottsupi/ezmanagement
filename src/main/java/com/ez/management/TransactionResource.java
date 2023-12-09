@@ -51,6 +51,12 @@ public class TransactionResource {
         return new ResponseEntity<>(newTransactionItem, HttpStatus.CREATED);
     }
 
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<?> deleteItemById(@PathVariable("id") Long id) {
+        transactionService.deleteTransactionById(id);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
     @GetMapping("/find/{id}/items")
     public ResponseEntity<List<TransactionItem>> findTransactionItemsById(@PathVariable("id") Long id) {
         List<TransactionItem> itemList = transactionService.findAllItemsByTransactionId(id);

@@ -9,6 +9,7 @@ import com.ez.management.repository.InventoryRepository;
 import com.ez.management.repository.TransactionItemRepository;
 import com.ez.management.repository.TransactionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.io.File;
@@ -42,7 +43,7 @@ public class TransactionService {
     }
 
     public List<Transaction> findAllTransaction() {
-        return  transactionRepository.findAll();
+        return  transactionRepository.findAll(Sort.by(Sort.Direction.DESC, "id"));
     }
 
     public Transaction findTransactionById(Long id) {
@@ -52,6 +53,10 @@ public class TransactionService {
 
     public TransactionItem addTransactionItem(TransactionItem transactionItem) {
         return transactionItemRepository.save(transactionItem);
+    }
+
+    public void deleteTransactionById(Long id) {
+        transactionRepository.deleteById(id);
     }
 
     public List<TransactionItem> findAllItemsByTransactionId(Long id) {
@@ -112,4 +117,6 @@ public class TransactionService {
 
         return ReceiptPrinter.testPrint(transactionItemRepository, transactionsToBePrinted, printList);
     }
+
+
 }

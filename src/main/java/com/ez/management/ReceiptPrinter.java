@@ -133,9 +133,9 @@ public class ReceiptPrinter {
         for(TransactionItem item: transactionItems) {
             String itemName = item.getName();
             if (itemName.length() > 16) {
-                itemName = itemName.substring(0, 16);
+                itemName = itemName.substring(0, 14) + "...";
             }
-            String itemLine = String.format(" %-16s %5s %11s",
+            String itemLine = String.format(" %-17s %4s %11s",
                     itemName,
                     item.getQuantity(),
                     item.getTotalPrice());
